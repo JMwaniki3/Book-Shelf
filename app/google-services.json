@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "363444701927",
+    "project_id": "book-shelf-buddy",
+    "storage_bucket": "book-shelf-buddy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363444701927:android:7b013126d18089270f3042",
+        "android_client_info": {
+          "package_name": "com.example.bookshelfbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363444701927-ms9fbrjkm7ok2i16pseo1d1al0ftq88q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNemeJvd230MuoeWxz-kSo8aMVDZIsE3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363444701927-ms9fbrjkm7ok2i16pseo1d1al0ftq88q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
