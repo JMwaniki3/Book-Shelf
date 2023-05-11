@@ -20,7 +20,8 @@
                 android:id="@+id/idIVbook"
                 android:layout_width="130dp"
                 android:layout_height="160dp"
-                android:layout_margin="18dp" />
+                android:layout_margin="18dp"
+                android:src="@drawable/common_google_signin_btn_text_dark_normal"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
