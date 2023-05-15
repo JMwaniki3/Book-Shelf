@@ -10,15 +10,13 @@
     app:cardCornerRadius="5dp"
     app:cardElevation="4dp">
 
-    <!--on below line we are creating a
-        linear layout for grid view item-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--on below line we are creating
-            a simple image view-->
+
         <ImageView
             android:id="@+id/idIVBook"
             android:layout_width="match_parent"
@@ -29,8 +27,7 @@
             android:scaleType="fitCenter"
             android:src="@mipmap/ic_launcher" />
 
-        <!--on below line we are creating
-            a simple text view-->
+
         <TextView
             android:id="@+id/idTVBookName"
             android:layout_width="match_parent"
@@ -46,8 +43,7 @@
             android:textStyle="bold"
             tools:ignore="RtlCompat" />
 
-        <!--on below line we are creating
-            a text view for page number-->
+
         <TextView
             android:id="@+id/idTVBookPages"
             android:layout_width="match_parent"

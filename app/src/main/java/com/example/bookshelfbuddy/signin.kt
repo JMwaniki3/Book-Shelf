@@ -1,16 +1,18 @@
 package com.example.bookshelfbuddy
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class signin : AppCompatActivity() {
     lateinit var edt_email1:EditText
     lateinit var edt_pass1:EditText
     lateinit var signup:Button
-    lateinit var edt_tv1:Button
+    lateinit var edt_tv1:TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

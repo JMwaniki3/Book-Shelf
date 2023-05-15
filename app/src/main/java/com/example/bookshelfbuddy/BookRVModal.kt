@@ -1,8 +1,7 @@
 package com.example.bookshelfbuddy
 
 data class BookRVModal(
-    // creating string, int and array list
-    // variables for our book details
+
     var title: String,
     var subtitle: String,
     var authors: ArrayList<String>,

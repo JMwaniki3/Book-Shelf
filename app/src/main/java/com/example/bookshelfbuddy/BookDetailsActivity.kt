@@ -12,8 +12,7 @@ import com.squareup.picasso.Picasso
 
 class BookDetailsActivity : AppCompatActivity() {
 
-    // creating variables for strings,text view,
-    // image views and button.
+
     lateinit var titleTV: TextView
     lateinit var subtitleTV: TextView
     lateinit var publisherTV: TextView
@@ -29,7 +28,7 @@ class BookDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_details)
 
-        // initializing our variables.
+
         titleTV = findViewById(R.id.idTVTitle)
         subtitleTV = findViewById(R.id.idTVSubTitle)
         publisherTV = findViewById(R.id.idTVpublisher)
@@ -40,7 +39,7 @@ class BookDetailsActivity : AppCompatActivity() {
         buyBtn = findViewById(R.id.idBtnBuy)
         bookIV = findViewById(R.id.idIVbook)
 
-        // getting the data which we have passed from our adapter class.
+
         val title = getIntent().getStringExtra("title")
         val subtitle = getIntent().getStringExtra("subtitle")
         val publisher = getIntent().getStringExtra("publisher")
@@ -52,8 +51,7 @@ class BookDetailsActivity : AppCompatActivity() {
         val infoLink = getIntent().getStringExtra("infoLink")
         val buyLink = getIntent().getStringExtra("buyLink")
 
-        // after getting the data we are setting
-        // that data to our text views and image view.
+
         titleTV.setText(title)
         subtitleTV.setText(subtitle)
         publisherTV.setText(publisher)
@@ -62,11 +60,10 @@ class BookDetailsActivity : AppCompatActivity() {
         pageTV.setText("No Of Pages : " + pageCount)
         Picasso.get().load(thumbnail).into(bookIV)
 
-        // adding on click listener for our preview button.
+
         previewBtn.setOnClickListener {
             if (previewLink.isNullOrEmpty()) {
-                // below toast message is displayed
-                // when preview link is not present.
+
                 Toast.makeText(
                     this@BookDetailsActivity,
                     "No preview Link present",
@@ -74,26 +71,23 @@ class BookDetailsActivity : AppCompatActivity() {
                 )
                     .show()
             }
-            // if the link is present we are opening
-            // that link via an intent.
+
             val uri: Uri = Uri.parse(previewLink)
             val i = Intent(Intent.ACTION_VIEW, uri)
             startActivity(i)
         }
 
-        // adding click listener for buy button
+
         buyBtn.setOnClickListener {
             if (buyLink.isNullOrEmpty()) {
-                // below toast message is displaying
-                // when buy link is empty.
+
                 Toast.makeText(
                     this@BookDetailsActivity,
                     "No buy page present for this book",
                     Toast.LENGTH_SHORT
                 ).show()
             }
-            // if the link is present we are opening
-            // the link via an intent.
+
             val uri = Uri.parse(buyLink)
             val i = Intent(Intent.ACTION_VIEW, uri)
             startActivity(i)

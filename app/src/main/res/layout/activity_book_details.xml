@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!--Image view for displaying our book image-->
+
             <ImageView
                 android:id="@+id/idIVbook"
                 android:layout_width="130dp"
@@ -29,7 +29,7 @@
                 android:layout_marginTop="20dp"
                 android:orientation="vertical">
 
-                <!--Text view for displaying book publisher-->
+
                 <TextView
                     android:id="@+id/idTVpublisher"
                     android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
-                <!--text view for displaying number of pages of book-->
+
                 <TextView
                     android:id="@+id/idTVNoOfPages"
                     android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
-                <!--text view for displaying book publish date-->
+
                 <TextView
                     android:id="@+id/idTVPublishDate"
                     android:layout_width="match_parent"
@@ -65,7 +65,7 @@
 
         </LinearLayout>
 
-        <!--text view for displaying book title-->
+
         <TextView
             android:id="@+id/idTVTitle"
             android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             android:textColor="@color/black"
             android:textSize="15sp" />
 
-        <!--text view for displaying book subtitle-->
+
         <TextView
             android:id="@+id/idTVSubTitle"
             android:layout_width="match_parent"
@@ -87,7 +87,7 @@
             android:textColor="@color/black"
             android:textSize="12sp" />
 
-        <!--text view for displaying book description-->
+
         <TextView
             android:id="@+id/idTVDescription"
             android:layout_width="match_parent"
@@ -105,7 +105,7 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <!--button for displaying book preview-->
+
             <Button
                 android:id="@+id/idBtnPreview"
                 android:layout_width="0dp"
@@ -115,7 +115,7 @@
                 android:text="Preview"
                 android:textAllCaps="false" />
 
-            <!--button for opening buying page of the book-->
+
             <Button
                 android:id="@+id/idBtnBuy"
                 android:layout_width="0dp"
