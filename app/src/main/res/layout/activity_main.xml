@@ -1,69 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+
 
     <EditText
-        android:id="@+id/email2"
-        android:layout_width="wrap_content"
+        android:id="@+id/etEmailAddress"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:autofillHints="emailAddress"
         android:ems="10"
         android:hint="Email"
-        android:textSize="35sp"
-        android:textColor="@color/black"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        android:minHeight="48dp"
+        android:textColorHint="#757575" />
 
     <EditText
-        android:id="@+id/pass2"
-        android:layout_width="wrap_content"
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:autofillHints="password"
         android:ems="10"
         android:hint="Password"
-        android:textColor="@color/black"
-        android:textSize="35sp"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        android:minHeight="48dp"
+        android:textColorHint="#757575" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#08F812"
-        android:text="LOGIN"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471" />
+        android:layout_margin="15dp"
+        android:background="#8240F8"
+        android:text="login" />
 
     <TextView
-        android:id="@+id/tv2"
-        android:layout_width="wrap_content"
+        android:id="@+id/tvRedirectSignUp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't have an account?Create one:)"
-        android:textColor="#E91E63"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_margin="15dp"
+        android:gravity="center_horizontal"
+        android:text="Don_t_have_an_account_sign_in"
+        android:textColor="#FF5722"
+        android:textSize="16sp" />
+
+</LinearLayout>

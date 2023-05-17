@@ -1,34 +1,63 @@
 package com.example.bookshelfbuddy
 
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-    lateinit var edt_email2:EditText
-    lateinit var edt_pass2:EditText
-    lateinit var login:Button
-    lateinit var edt_tv2:TextView
+
+    private lateinit var tvRedirectSignUp: TextView
+    lateinit var etEmail: EditText
+    private lateinit var etPass: EditText
+    lateinit var btnLogin: Button
+
+    // Creating firebaseAuth object
+    lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        edt_email2=findViewById(R.id.email2)
-        edt_pass2=findViewById(R.id.pass2)
-        login=findViewById(R.id.login)
-        edt_tv2=findViewById(R.id.tv2)
+        // View Binding
+        tvRedirectSignUp = findViewById(R.id.tvRedirectSignUp)
+        btnLogin = findViewById(R.id.btnLogin)
+        etEmail = findViewById(R.id.etEmailAddress)
+        etPass = findViewById(R.id.etPassword)
 
-        edt_tv2.setOnClickListener {
-            val intent=Intent(this, signin::class.java)
-            startActivity(intent)
+        // initialising Firebase auth object
+        auth = FirebaseAuth.getInstance()
+
+        btnLogin.setOnClickListener {
+            login()
         }
-        login.setOnClickListener {
-            val intent=Intent(this, search::class.java)
+
+        tvRedirectSignUp.setOnClickListener {
+            val intent = Intent(this,signin::class.java)
             startActivity(intent)
+            // using finish() to end the activity
+            finish()
         }
     }
+
+    private fun login() {
+        val email = etEmail.text.toString()
+        val pass = etPass.text.toString()
+        // calling signInWithEmailAndPassword(email, pass)
+        // function using Firebase auth object
+        // On successful response Display a Toast
+        auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
+            if (it.isSuccessful) {
+                Toast.makeText(this, "Successfully LoggedIn", Toast.LENGTH_SHORT).show()
+                val intent=Intent(this,search::class.java)
+                startActivity(intent)
+            } else
+                Toast.makeText(this, "Log In failed ", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }

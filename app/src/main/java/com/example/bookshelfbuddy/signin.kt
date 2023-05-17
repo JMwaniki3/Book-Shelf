@@ -1,31 +1,64 @@
 package com.example.bookshelfbuddy
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class signin : AppCompatActivity() {
-    lateinit var edt_email1:EditText
-    lateinit var edt_pass1:EditText
-    lateinit var signup:Button
-    lateinit var edt_tv1:TextView
-
-
+    lateinit var EdtEmail:EditText
+    private lateinit var EdtPass:EditText
+    lateinit var EdtConPaa:EditText
+    private lateinit var BtnSignup:Button
+    lateinit var TvDirectLogin:TextView
+    private lateinit var auth:FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.search)
+        setContentView(R.layout.activity_signin)
+        EdtEmail=findViewById(R.id.etSEmailAddress)
+        EdtPass=findViewById(R.id.etSPassword)
+        EdtConPaa=findViewById(R.id.etSConfPassword)
+        BtnSignup=findViewById(R.id.btnSSigned)
+        TvDirectLogin=findViewById(R.id.tvRedirectLogin)
+        auth=Firebase.auth
 
-        edt_email1=findViewById(R.id.email1)
-        edt_pass1=findViewById(R.id.pass1)
-        signup=findViewById(R.id.signin)
-        edt_tv1=findViewById(R.id.tv1)
+        BtnSignup.setOnClickListener {
+            SignUpUser()
 
-        edt_tv1.setOnClickListener {
-            val intent=Intent(this,MainActivity::class.java)
+        }
+        TvDirectLogin.setOnClickListener {
+            val intent=Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+    }
+    private fun SignUpUser(){
+        val email=EdtEmail.text.toString()
+        val pass=EdtPass.text.toString()
+        val confirmpass=EdtConPaa.text.toString()
+        if (email.isBlank() || pass.isBlank() || confirmpass.isBlank()){
+            Toast.makeText(this,"Please Email and password cant be blank",Toast.LENGTH_LONG).show()
+            return
+        }  else if (pass != confirmpass){
+            Toast.makeText(this,"Password do not match",Toast.LENGTH_LONG).show()
+            return
+
+        }
+        auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this) {
+            if (it.isSuccessful){
+                Toast.makeText(this,"Signed successfully",Toast.LENGTH_LONG).show()
+                val intent=Intent(this,search::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+                Toast.makeText(this,"Failed to create",Toast.LENGTH_LONG).show()
+            }
+
         }
     }
 }
